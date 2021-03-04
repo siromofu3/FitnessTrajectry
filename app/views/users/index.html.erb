@@ -1,0 +1,22 @@
+<div class="main users-index">
+  <div class="container">
+    <h1 class="users-heading">ユーザー一覧</h1>
+    <% @users.each do |user| %>
+    <div class="users-index-item">
+      <div class="user-left">
+        <img src="<%="/user_images/#{user.icon_image_name}"%>">
+      </div>
+      <div class="user-right">
+        <div class="user-name">
+          <%= link_to(user.name, "/users/#{user.id}") %>
+        </div>
+        <% if user.gender == "1" %>
+        <p><%= "男性  #{user.age}歳  #{user.user_height}cm" %></p>
+        <% else %>
+        <p><%= "女性  #{user.age}歳  #{user.user_height}cm" %></p>
+        <% end %>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</div>

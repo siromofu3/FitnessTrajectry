@@ -1,0 +1,31 @@
+<div class="main posts-new">
+  <div class="container">
+    <h1 class="form-heading">編集する</h1>
+    <div class="form">
+      <div class="form-body">
+        <% @post.errors.full_messages.each do |message| %>
+        <div class="form-error">
+          <%= message %>
+        </div>
+        <% end %>
+        <%= form_tag("/posts/#{@post.id}/update", {multipart: true}) do %>
+        <p>記録日</p>
+        <input type="text" name="recording_date" value="<%= @post.recording_date %>">
+        <p>体重</p>
+        <input type="text" name="body_weight" value="<%= @post.body_weight %>">
+        <p>体脂肪率</p>
+        <input type="text" name="body_fat_percentage" value="<%= @post.body_fat_percentage %>">
+        <p>トレーニングメニュー</p>
+        <textarea name="training_menu"><%= @post.training_menu %></textarea>
+        <p>食事メニュー</p>
+        <textarea name="meal_menu"><%= @post.meal_menu %></textarea>
+        <p>総摂取カロリー</p>
+        <input type="text" name="total_calorie" value="<%= @post.total_calorie %>">
+        <p>記録写真</p>
+        <input type="file" name="post_image" value="<%= @post.post_image_name %>">
+        <input type="submit" value="保存">
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

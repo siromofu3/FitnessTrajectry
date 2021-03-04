@@ -1,0 +1,2 @@
+class AddDateColumn < ApplicationRecord
+end

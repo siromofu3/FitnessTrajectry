@@ -1,0 +1,31 @@
+<div class="main users-edit">
+  <div class="container">
+    <div class="form-heading">ユーザー情報の編集</div>
+    <div class="form users-form">
+      <div class="form-body">
+      <% @user.errors.full_messages.each do |message| %>
+          <div class="form-error">
+            <%= message %>
+          </div>
+        <% end %>
+        <%= form_tag("/users/#{@user.id}/update", {multipart: true}) do %>
+        <p>ユーザー名</p>
+        <input type="text" name="name" value="<%= @user.name %>">
+        <p>メールアドレス</p>
+        <input type="text" name="email" value="<%= @user.email %>">
+        <p>パスワード</p>
+        <input type="password" name="password" value="<%= @user.password %>">
+        <p>性別</p>
+        <%= select_tag(:gender, options_for_select([["男性",1], ["女性",2]], @user.gender.to_i)) %>
+        <p>身長</p>
+        <input type="text" name="height" value="<%= @user.user_height %>">
+        <p>生年月日</p>
+        <input type="text" name="birthday" value="<%= @user.birthday %>">
+        <p>アイコン</p>
+        <input type="file" name="icon_image" value="<%= @user.icon_image_name %>">
+        <input type="submit" value="保存">
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
