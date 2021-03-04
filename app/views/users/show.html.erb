@@ -8,6 +8,14 @@
       <%= link_to("編集", "/users/#{@user.id}/edit") %>
       <% end %>
     </div>
+    <div class="line-chart">
+    <h3>体重</h3>
+    <%= line_chart @chart_weight_dates, height: "200px" %>
+    </div>
+    <div class="line-chart">
+    <h3>体脂肪率</h3>
+    <%= line_chart @chart_fat_dates, height: "200px" %>
+    </div>
     <ul class="user-tabs">
       <li class="active"><%= link_to("投稿", "/users/#{@user.id}") %></li>
       <li><%= link_to("いいね!", "/users/#{@user.id}/likes") %></li>

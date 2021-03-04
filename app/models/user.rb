@@ -6,7 +6,7 @@ class User < ApplicationRecord
   validates :birthday, {presence: true}
 
   def posts
-    return Post.where(user_id: self.id)
+    return Post.where(user_id: self.id).order(recording_date: :desc)
   end
 
   def age

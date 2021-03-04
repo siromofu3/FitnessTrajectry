@@ -20,6 +20,19 @@ class UsersController < ApplicationController
     end
 
     @age = @user.age
+
+    @posts = Post.where(user_id: @user.id)
+
+    @chart_weight_dates = []
+    @posts.each do |post|
+      @chart_weight_dates.push([post.recording_date, post.body_weight])
+    end
+
+    @chart_fat_dates = []
+    @posts.each do |post|
+      @chart_fat_dates.push([post.recording_date, post.body_fat_percentage])
+    end
+
   
   end 
   
