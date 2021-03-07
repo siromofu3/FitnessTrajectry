@@ -7,8 +7,8 @@
           <div class="form-error">
             <%= message %>
           </div>
-        <% end %>
-        <%= form_tag("/users/create") do %>
+      <% end %>
+      <%= form_tag("/users/create") do %>
         <p>ユーザー名</p>
         <input type="text" name="name" value="<%= params[:name] %>">
         <p>メールアドレス</p>
@@ -16,14 +16,14 @@
         <p>パスワード</p>
         <input type="password" name="password" value="<%= params[:password] %>">
         <p>性別</p>
-        <%= f.select(:gender, options_for_select(["男性", "女性"], selected: params[:gender]), {name="gender"}) %>
+        <%= select_tag(:gender, options_for_select([["男性",1], ["女性",2]], @user.gender.to_i)) %>
         <p>身長</p>
         <input type="text" name="height" value="<%= params[:height] %>">
         <p>生年月日</p>
         <input type="text" name="birthday" value="<%= params[:birthday] %>">
         <input type="submit" value="新規登録">
-        <% end %>
-      </div>
+      <% end %>
+    </div>
     </div>
   </div>
 </div>
