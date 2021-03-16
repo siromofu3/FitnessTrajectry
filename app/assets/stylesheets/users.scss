@@ -1,9 +1,10 @@
 /* users/index ================================ */
 .users-index {
   .users-heading {
+    text-align: center;
     font-weight: 300;
     margin: 60px 0 20px;
-    font-size: 48px;
+    font-size: 40px;
     color: #bcc8d4;
   }
 
@@ -49,44 +50,65 @@
 
 /* users/show ================================ */
 .user-show {
-  text-align: center;
+  // text-align: center;
+  .user {
+    padding: 0 30px 20px 30px;
+    .user-wrapper{
+      display: flex;
+      .user-left{
+        img {
+          width: 120px;
+          height: 120px;
+          border-radius: 40%;
+          box-shadow: 0 2px 6px #c1ced7;
+          margin: 20px 0 10px 30px;
+          object-fit: cover;
+        }
+      }
+      .user-right{
+        padding-left: 40px;
+        text-align: left;
+        h2 {
+          font-size: 20px;
+          font-weight: 600;
+          line-height: 1.2;
+          margin: 20px 0 10px 0;
+        }
+        p {
+          font-size: 15px;
+          margin-bottom: 2px;
+        }
+      }
+      span {
+        color: #afb6bf;
+        font-weight: 200;
+        padding: 0 6px 0 8px;
+      }
+    }
+    .user-bottom{
+      padding-top: 15px;
+    }
+    a {
+      color: #8899a6;
+      text-decoration: underline;
+      font-weight: 200;
+      display: block;
+      text-align: right;
+    }
+  }
+  .chart-wrapper{
+    text-align: center;
+    h3{
+      padding: 15px 0;
+    }
+  }
 }
 
-.user {
-  margin-bottom: 20px;
-}
 
-.user img {
-  width: 80px;
-  height: 80px;
-  border-radius: 40%;
-  box-shadow: 0 2px 6px #c1ced7;
-  margin: 20px 0 10px;
-  object-fit: cover;
-}
 
-.user h2 {
-  font-size: 20px;
-  font-weight: 600;
-  line-height: 1.2;
-}
 
-.user p {
-  font-size: 13px;
-  margin-bottom: 15px;
-}
 
-.user a {
-  color: #8899a6;
-  text-decoration: underline;
-  font-weight: 200;
-}
 
-.user span {
-  color: #afb6bf;
-  font-weight: 200;
-  padding: 0 6px 0 8px;
-}
 
 .user-tabs {
   margin-top: 40px;

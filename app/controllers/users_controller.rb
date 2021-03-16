@@ -21,7 +21,7 @@ class UsersController < ApplicationController
 
     @age = @user.age
 
-    @posts = Post.where(user_id: @user.id)
+    @posts = Post.where(user_id: @user.id).order(recording_date: "desc")
 
     @chart_weight_dates = []
     @posts.each do |post|
@@ -32,8 +32,12 @@ class UsersController < ApplicationController
     @posts.each do |post|
       @chart_fat_dates.push([post.recording_date, post.body_fat_percentage])
     end
+    
+    if @posts.count != 0
+      @recent_weight = @posts[0].body_weight
+      @recent_fat_percentage = @posts[0].body_fat_percentage
+    end  
 
-  
   end 
   
 
@@ -49,7 +53,8 @@ class UsersController < ApplicationController
       password: params[:password],
       birthday: params[:birthday],
       gender: params[:gender],
-      user_height: params[:height]
+      user_height: params[:height],
+      description: "理想のカラダを目指して一緒に頑張りましょう！"
     )
 
     @user.icon_image_name = "default_user_image.jpg"
@@ -74,6 +79,7 @@ class UsersController < ApplicationController
     @user.birthday = params[:birthday]
     @user.gender = params[:gender]
     @user.user_height = params[:height]
+    @user.description = params[:description]
 
     if params[:icon_image]
     @user.icon_image_name = "#{@user.id}.jpg"

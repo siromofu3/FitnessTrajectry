@@ -23,6 +23,8 @@
         <input type="text" name="birthday" value="<%= @user.birthday %>">
         <p>アイコン</p>
         <input type="file" name="icon_image" value="<%= @user.icon_image_name %>">
+        <p>紹介文</p>
+        <textarea name="description"><%= @user.description %></textarea>
         <input type="submit" value="保存">
         <% end %>
       </div>
