@@ -1,38 +1,9 @@
 <div class="main user-show">
   <div class="container">
-    <div class="user">
-      <div class="user-wrapper">
-        <div class="user-left">
-          <img src="<%= "/user_images/#{@user.icon_image_name}" %>">
-        </div>
-        <div class="user-right">
-          <h2><%= @user.name %></h2>
-          <p><%= "#{@user_gender}  #{@user.age}歳" %></p>
-          <p><%= "身長：#{@user.user_height}cm" %></p>
-          <p><%= "現在の体重：#{@recent_weight}kg" %></p>
-          <p><%= "現在の体脂肪率：#{@recent_fat_percentage}%" %></p>
-        </div>
-      </div>
-      <div class="user-bottom">
-        <p><%= @user.description %></p>
-      </div>
-      <% if @current_user.id == @user.id %>
-      <%= link_to("プロフィールを編集", "/users/#{@user.id}/edit") %>
-      <% end %>
-    </div>
-    <div class="chart-wrapper">
-      <div class="line-chart">
-        <h3>体重(kg)</h3>
-        <%= line_chart @chart_weight_dates, height: "200px" %>
-      </div>
-      <div class="line-chart">
-        <h3>体脂肪率(%)</h3>
-        <%= line_chart @chart_fat_dates, height: "200px" %>
-      </div>
-    </div>
+    <%= render "shared/userinfo" %>
     <ul class="user-tabs">
       <li class="active"><%= link_to("投稿", "/users/#{@user.id}") %></li>
-      <li><%= link_to("いいね!", "/users/#{@user.id}/likes") %></li>
+      <li><%= link_to "いいね!", "/users/#{@user.id}/likes" %></li>
     </ul>
     <% @user.posts.each do |post| %>
     <div class="posts-index-wrapper">
@@ -41,7 +12,8 @@
           <img src="<%= "/user_images/#{post.user.icon_image_name}" %>">
         </div>
         <div class="post-center">
-          <%= link_to(post.user.name, "/posts/#{post.user.id}") %>
+          <%# <%= link_to post.user.name, "/posts/#{post.user.id}" %>
+          <%= link_to post.user.name, post_path(post.user) %>
           <div class="post-user-name">
           </div>
           <ul>
@@ -62,7 +34,8 @@
         </div>
       </div>
       <div class="post-menus">
-        <%= link_to("詳細ページへ", "/posts/#{post.id}") %>
+        <%# <%= link_to "詳細ページへ", "/posts/#{post.id}" %>
+        <%= link_to "詳細ページへ", post_path(post) %>
       </div>
     </div>
     <% end %>

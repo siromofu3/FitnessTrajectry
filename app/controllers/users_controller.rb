@@ -20,14 +20,11 @@ class UsersController < ApplicationController
     end
 
     @age = @user.age
-
     @posts = Post.where(user_id: @user.id).order(recording_date: "desc")
-
     @chart_weight_dates = []
     @posts.each do |post|
       @chart_weight_dates.push([post.recording_date, post.body_weight])
     end
-
     @chart_fat_dates = []
     @posts.each do |post|
       @chart_fat_dates.push([post.recording_date, post.body_fat_percentage])
@@ -122,6 +119,28 @@ class UsersController < ApplicationController
   def likes
     @user = User.find_by(id: params[:id])
     @likes = Like.where(user_id: @user.id)    
+
+    if @user.gender == "1"
+      @user_gender = "男性"
+    else
+      @user_gender = "女性"
+    end
+
+    @age = @user.age
+    @posts = Post.where(user_id: @user.id).order(recording_date: "desc")
+    @chart_weight_dates = []
+    @posts.each do |post|
+      @chart_weight_dates.push([post.recording_date, post.body_weight])
+    end
+    @chart_fat_dates = []
+    @posts.each do |post|
+      @chart_fat_dates.push([post.recording_date, post.body_fat_percentage])
+    end
+    
+    if @posts.count != 0
+      @recent_weight = @posts[0].body_weight
+      @recent_fat_percentage = @posts[0].body_fat_percentage
+    end  
   end
   
   def ensure_correct_user

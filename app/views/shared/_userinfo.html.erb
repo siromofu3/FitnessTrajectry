@@ -1,0 +1,30 @@
+    <div class="user">
+      <div class="user-wrapper">
+        <div class="user-left">
+          <img src="<%= "/user_images/#{@user.icon_image_name}" %>">
+        </div>
+        <div class="user-right">
+          <h2><%= @user.name %></h2>
+          <p><%= "#{@user_gender} #{@user.age}歳" %></p>
+          <p><%= "身長：#{@user.user_height}cm" %></p>
+          <p><%= "現在の体重：#{@recent_weight}kg" %></p>
+          <p><%= "現在の体脂肪率：#{@recent_fat_percentage}%" %></p>
+        </div>
+      </div>
+      <div class="user-bottom">
+        <p><%= @user.description %></p>
+      </div>
+      <% if @current_user.id == @user.id %>
+      <%= link_to "プロフィールを編集", edit_user_path(@user) %>
+      <% end %>
+    </div>
+    <div class="chart-wrapper">
+      <div class="line-chart">
+        <h3>体重(kg)</h3>
+        <%= line_chart @chart_weight_dates, height: "200px" %>
+      </div>
+      <div class="line-chart">
+        <h3>体脂肪率(%)</h3>
+        <%= line_chart @chart_fat_dates, height: "200px" %>
+      </div>
+    </div>

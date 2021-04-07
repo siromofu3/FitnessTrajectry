@@ -8,7 +8,7 @@
             <%= @error_message %>
           </div>
         <% end %>
-        <%= form_tag("/login") do %>
+        <%= form_tag login_path do %>
         <p>メールアドレス</p>
         <input type="text" name="email" value="<%= @email %>">
         <p>パスワード</p>

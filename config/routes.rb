@@ -1,28 +1,25 @@
 Rails.application.routes.draw do
 
-  post "likes/:post_id/create" => "likes#create"
-  post "likes/:post_id/destroy" => "likes#destroy"
+  root "home#top"
+  get "/about", to: "home#about"
 
-  get "users/:id/likes" => "users#likes"
-  post "logout" => "users#logout" 
-  post "login" => "users#login"
-  get "login" => "users#login_form"
-  post "users/create" => "users#create"
-  post "users/:id/update" => "users#update"
-  get "users/:id/edit" => "users#edit"
-  get "signup" => "users#new"
-  get "users/index" => "users#index"
-  get "users/:id" => "users#show"
-
-  post "posts/:id/destroy" => "posts#destroy"
-  post "posts/:id/update" => "posts#update"
-  get "posts/:id/edit" => "posts#edit"
-  post "posts/create" => "posts#create"
-  get "posts/new" => "posts#new"
-  get "posts/index" => "posts#index"
-  get "posts/:id" => "posts#show"
+  resources :users, :only => [:index, :create, :edit, :show, :update, :destroy]
+  get "/signup", to: "users#new"
+  post "/login", to: "users#login"
+  get "/login", to: "users#login_form"
+  post "/logout", to: "users#logout"
+  get "/users/:id/likes", to: "users#likes"
   
-  get "/" => "home#top"
-  get "about" => "home#about"
+  resources :posts, :only => [:index, :new, :create, :edit, :show, :update, :destroy]
+  # get "/posts_index", to: "posts#index"
+  # get "/posts_new", to: "posts#new"
+  # post "/posts_create", to: "posts#create"
+  # get "/posts/:id/edit", to: "posts#edit"
+  # post "/posts/:id/update", to: "posts#update"
+  # post "/posts/:id/destroy", to: "posts#destroy"
+  # get "/posts/:id", to: "posts#show"
+  
+  post "/likes/:post_id/create", to: "likes#create"
+  post "/likes/:post_id/destroy", to: "likes#destroy"
 
 end

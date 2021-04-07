@@ -8,7 +8,7 @@
       </div>
       <div class="user-right">
         <div class="user-name">
-          <%= link_to(user.name, "/users/#{user.id}") %>
+          <%= link_to user.name, user_path(user) %>
         </div>
         <% if user.gender == "1" %>
         <p><%= "男性  #{user.age}歳  #{user.user_height}cm" %></p>

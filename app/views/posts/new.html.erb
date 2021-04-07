@@ -8,10 +8,13 @@
           <%= message %>
         </div>
         <% end %>
-        <%= form_tag("/posts/create", {multipart: true}) do %>
+        <%= form_tag posts_path, method: "post", multipart: true do %>
         <p>記録日</p>
-        <input type="text" name="recording_date" value="<%= params[:recording_date] %>">
-        <%= form_for.date_field %>
+        <% form_for @post, url: posts_path do |f| %>
+        <%= f.datetime_select :recording_date %>
+        <% end %>
+        <%# <input type="text" name="recording_date" value="<%= params[:recording_date] %>
+        <%# <%= form_for.date_field %>
         <p>体重</p>
         <input type="text" name="body_weight" value="<%= params[:body_weight] %>">
         <p>体脂肪率</p>

@@ -17,15 +17,18 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.new(
-      recording_date: params[:recording_date],
-      body_weight: params[:body_weight],
-      body_fat_percentage: params[:body_fat_percentage],
-      training_menu: params[:training_menu],
-      meal_menu: params[:meal_menu],
-      total_calorie: params[:total_calorie],
-      user_id: @current_user.id,
-    )
+    @post = Post.new(user_params)
+
+
+    # @post = Post.new(
+    #   recording_date: params[:recording_date],
+    #   body_weight: params[:body_weight],
+    #   body_fat_percentage: params[:body_fat_percentage],
+    #   training_menu: params[:training_menu],
+    #   meal_menu: params[:meal_menu],
+    #   total_calorie: params[:total_calorie],
+    #   user_id: @current_user.id,
+    # )
     if params[:post_image]
       @post.post_image_name = "#{@post.user.name}_#{@post.id}.jpg"
       image = params[:post_image]
@@ -37,6 +40,12 @@ class PostsController < ApplicationController
     else
       render("posts/new")
     end
+
+    # form_forの練習
+    def user_params
+      params.require(:user).permit(:recording_date)
+    end
+
   end
 
   def edit

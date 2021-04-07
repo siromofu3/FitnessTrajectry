@@ -8,7 +8,7 @@
           <%= message %>
         </div>
         <% end %>
-        <%= form_tag("/posts/#{@post.id}/update", {multipart: true}) do %>
+        <%= form_tag post_path(@post), method: "patch", multipart: true do %>
         <p>記録日</p>
         <input type="text" name="recording_date" value="<%= @post.recording_date %>">
         <p>体重</p>
