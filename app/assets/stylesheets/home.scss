@@ -60,7 +60,25 @@ body {
   clear: both;
 }
 
-/* ヘッダー ================================ */
+.btn-wrapper{
+  display: block;
+  text-align: center;
+  .blue-btn {
+    border: none;
+    background-color: #3367D6;
+    color: white;
+    cursor: pointer;
+    font-weight: 300;
+    font-size: 15px;
+    line-height: 30px;
+    width: 200px;
+    border-radius: 5px;
+    margin-top: 10px;
+    margin-bottom: 35px;
+  }
+}
+  
+  /* ヘッダー ================================ */
 header {
   height: 64px;
   position: absolute;

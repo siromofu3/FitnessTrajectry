@@ -11,13 +11,6 @@ Rails.application.routes.draw do
   get "/users/:id/likes", to: "users#likes"
   
   resources :posts, :only => [:index, :new, :create, :edit, :show, :update, :destroy]
-  # get "/posts_index", to: "posts#index"
-  # get "/posts_new", to: "posts#new"
-  # post "/posts_create", to: "posts#create"
-  # get "/posts/:id/edit", to: "posts#edit"
-  # post "/posts/:id/update", to: "posts#update"
-  # post "/posts/:id/destroy", to: "posts#destroy"
-  # get "/posts/:id", to: "posts#show"
   
   post "/likes/:post_id/create", to: "likes#create"
   post "/likes/:post_id/destroy", to: "likes#destroy"

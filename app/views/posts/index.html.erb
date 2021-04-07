@@ -1,6 +1,11 @@
 <div class="main posts-index">
   <div class="container">
-  <h2 class="posts-heading">みんなのフィットネス近況</h2>
+    <h2 class="posts-heading">みんなのフィットネス近況</h2>
+    <div class="btn-wrapper">
+      <%= link_to new_post_path do %>
+      <button class="blue-btn">＋ 投稿する</button>
+      <% end %>
+    </div>
     <% @posts.each do |post| %>
     <div class="posts-index-wrapper">
       <div class="posts-index-item">

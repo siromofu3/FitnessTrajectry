@@ -1,6 +1,6 @@
 <div class="main user-show">
   <div class="container">
-    <%= render "shared/userinfo" %>
+    <%= render "shared/user_info" %>
     <ul class="user-tabs">
       <li class="active"><%= link_to("投稿", "/users/#{@user.id}") %></li>
       <li><%= link_to "いいね!", "/users/#{@user.id}/likes" %></li>

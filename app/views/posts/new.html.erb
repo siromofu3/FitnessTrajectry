@@ -8,27 +8,7 @@
           <%= message %>
         </div>
         <% end %>
-        <%= form_tag posts_path, method: "post", multipart: true do %>
-        <p>記録日</p>
-        <% form_for @post, url: posts_path do |f| %>
-        <%= f.datetime_select :recording_date %>
-        <% end %>
-        <%# <input type="text" name="recording_date" value="<%= params[:recording_date] %>
-        <%# <%= form_for.date_field %>
-        <p>体重</p>
-        <input type="text" name="body_weight" value="<%= params[:body_weight] %>">
-        <p>体脂肪率</p>
-        <input type="text" name="body_fat_percentage" value="<%= params[:body_fat_percentage] %>">
-        <p>トレーニングメニュー</p>
-        <textarea name="training_menu"><%= params[:training_menu] %></textarea>
-        <p>食事メニュー</p>
-        <textarea name="meal_menu"><%= params[:meal_menu] %></textarea>
-        <p>総摂取カロリー</p>
-        <input type="text" name="total_calorie" value="<%= params[:total_calorie] %>">
-        <p>記録写真</p>
-        <input type="file" name="post_image" value="<%= @post.post_image_name %>">
-        <input type="submit" value="投稿">
-        <% end %>
+          <%= render "shared/post_form" %>
       </div>
     </div>
   </div>

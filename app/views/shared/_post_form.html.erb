@@ -1,0 +1,19 @@
+
+
+        <%= form_with(model: @post, local: true) do |f| %>
+        <%= f.label "記録日" %>
+        <%= f.date_field :recording_date %>
+        <%= f.label "体重" %>
+        <%= f.text_field :body_weight %>
+        <%= f.label "体脂肪率" %>
+        <%= f.text_field :body_fat_percentage %>
+        <%= f.label "トレーニングメニュー" %>
+        <%= f.text_area :training_menu %>
+        <%= f.label "食事メニュー" %>
+        <%= f.text_area :meal_menu %>
+        <%= f.label "総摂取カロリー" %>
+        <%= f.text_field :total_calorie %>
+        <%= f.label "記録写真" %>
+        <%= f.file_field :post_image %>
+        <%= f.submit "投稿" %>
+        <% end %>
