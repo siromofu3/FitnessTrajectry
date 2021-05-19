@@ -2,12 +2,14 @@
   <div class="container">
     <div class="posts-show-item">
       <div class="post-user-name">
+        <%= link_to user_path(@post.user) do %>
         <img class="icon-image" src="<%= "/user_images/#{@post.user.icon_image_name}" %>">
+        <% end %>
         <%= link_to @post.user.name, user_path(@post.user) %>
       </div>
       <% if @post.post_image_name != nil %>
       <div class="post-image-wrapper">
-      <img class="post-image" src="<%= "/post_images/#{@post.post_image_name}" %>">
+        <img class="post-image" src="<%= "/post_images/#{@post.post_image_name}" %>">
       </div>
       <% end %>
       <ul>
@@ -19,19 +21,17 @@
         <li>総摂取カロリー：<%= @post.total_calorie %>kcal</li>
       </ul>
       <% if Like.find_by(user_id: @current_user.id, post_id: @post.id) %>
-        <%= link_to "/likes/#{@post.id}/destroy", method: "post" do %>
-          <i class="fas fa-heart like-btn-unlike"></i>
-        <% end %>
+      <%= link_to "/likes/#{@post.id}/destroy", method: "post" do %>
+      <i class="fas fa-heart like-btn-unlike"></i>
+      <% end %>
       <% else %>
-        <%= link_to "/likes/#{@post.id}/create", method: "post" do %>
-          <i class="fas fa-heart like-btn"></i>
-        <% end %>
+      <%= link_to "/likes/#{@post.id}/create", method: "post" do %>
+      <i class="fas fa-heart like-btn"></i>
+      <% end %>
       <% end %>
       <%= @likes_count %>
       <% if @current_user.id == @post.user.id %>
       <div class="post-menus">
-        <%# <%= link_to("編集", "/posts/#{@post.id}/edit") %>
-        <%# <%= link_to("削除", "/posts/#{@post.id}/destroy", {method: "post"}) %>
         <%= link_to "編集", edit_post_path(@post) %>
         <%= link_to "削除", post_path(@post), method: "delete" %>
       </div>

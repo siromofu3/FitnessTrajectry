@@ -14,3 +14,5 @@ ActiveStorage.start()
 
 require("chartkick")
 require("chart.js")
+require('jquery')
+require("home.js")  

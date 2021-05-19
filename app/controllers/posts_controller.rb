@@ -7,7 +7,7 @@ class PostsController < ApplicationController
   end
 
   def show
-    @post = Post.find_by(id: params[:id])
+    @post = Post.find(params[:id])
     @user = @post.user
     @likes_count = Like.where(post_id: params[:id]).count
   end
@@ -33,11 +33,11 @@ class PostsController < ApplicationController
   end
   
   def edit
-    @post = Post.find_by(id: params[:id])
+    @post = Post.find(params[:id])
   end
   
   def update
-    @post = Post.find_by(id: params[:id])
+    @post = Post.find(params[:id])
     @post.recording_date = post_params[:recording_date]
     @post.body_weight = post_params[:body_weight]
     @post.body_fat_percentage = post_params[:body_fat_percentage]
@@ -60,7 +60,7 @@ class PostsController < ApplicationController
   end
   
   def destroy
-    @post = Post.find_by(id: params[:id])
+    @post = Post.find(params[:id])
     if @post.destroy
       flash[:notice] = "投稿を削除しました"
       redirect_to posts_path
@@ -70,7 +70,7 @@ class PostsController < ApplicationController
   end
   
   def ensure_correct_user
-    @post = Post.find_by(id: params[:id])
+    @post = Post.find(params[:id])
     if @current_user.id != @post.user_id
       flash[:notice] = "権限がありません"
       redirect_to posts_path

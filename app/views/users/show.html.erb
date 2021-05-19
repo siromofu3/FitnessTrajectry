@@ -1,43 +1,46 @@
 <div class="main user-show">
   <div class="container">
-    <%= render "shared/user_info" %>
-    <ul class="user-tabs">
-      <li class="active"><%= link_to("投稿", "/users/#{@user.id}") %></li>
-      <li><%= link_to "いいね!", "/users/#{@user.id}/likes" %></li>
-    </ul>
-    <% @user.posts.each do |post| %>
-    <div class="posts-index-wrapper">
-      <div class="posts-index-item">
-        <div class="post-left">
-          <img src="<%= "/user_images/#{post.user.icon_image_name}" %>">
-        </div>
-        <div class="post-center">
-          <%# <%= link_to post.user.name, "/posts/#{post.user.id}" %>
-          <%= link_to post.user.name, post_path(post.user) %>
-          <div class="post-user-name">
+    <div class="background-white">
+      <div class="user-show-content">
+        <%= render "users/user_info" %>
+        <ul class="user-tabs">
+          <li class="active"><%= link_to("投稿", "/users/#{@user.id}") %></li>
+          <li><%= link_to "いいね!", "/users/#{@user.id}/likes" %></li>
+        </ul>
+        <% @user.posts.each do |post| %>
+        <div class="posts-index-wrapper">
+          <div class="posts-index-item">
+            <div class="post-left">
+              <img src="<%= "/user_images/#{post.user.icon_image_name}" %>">
+            </div>
+            <div class="post-center">
+              <%= link_to post.user.name, post_path(post.user) %>
+              <div class="post-user-name">
+              </div>
+              <ul>
+                <li>投稿日：<%= post.recording_date %></li>
+                <li>体重：<%= post.body_weight %>kg</li>
+                <li>体脂肪率：<%= post.body_fat_percentage %>%</li>
+                <li>トレーニングメニュー：<%= post.training_menu %></li>
+                <li>食事メニュー：<%= post.meal_menu %></li>
+                <li>総摂取カロリー：<%= post.total_calorie %>kcal</li>
+              </ul>
+            </div>
+            <div class="post-right">
+              <% if post.post_image_name != nil %>
+              <div class="post-image-wrapper">
+                <img class="post-image" src="<%= "/post_images/#{post.post_image_name}" %>">
+              </div>
+              <% end %>
+            </div>
           </div>
-          <ul>
-            <li>投稿日：<%= post.recording_date %></li>
-            <li>体重：<%= post.body_weight %>kg</li>
-            <li>体脂肪率：<%= post.body_fat_percentage %>%</li>
-            <li>トレーニングメニュー：<%= post.training_menu %></li>
-            <li>食事メニュー：<%= post.meal_menu %></li>
-            <li>総摂取カロリー：<%= post.total_calorie %>kcal</li>
-          </ul>
-        </div>
-        <div class="post-right">
-          <% if post.post_image_name != nil %>
-          <div class="post-image-wrapper">
-            <img class="post-image" src="<%= "/post_images/#{post.post_image_name}" %>">
+          <div class="post-menus">
+            <%# <%= link_to "詳細ページへ", "/posts/#{post.id}" %>
+            <%= link_to "詳細ページへ", post_path(post) %>
           </div>
-          <% end %>
         </div>
-      </div>
-      <div class="post-menus">
-        <%# <%= link_to "詳細ページへ", "/posts/#{post.id}" %>
-        <%= link_to "詳細ページへ", post_path(post) %>
+        <% end %>
       </div>
     </div>
-    <% end %>
   </div>
 </div>

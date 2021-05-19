@@ -1,5 +1,7 @@
-<div class="main users-edit">
+<div class="main user-edit">
   <div class="container">
+    <div class="background-white">
+      <div class="user-edit-content">
     <div class="form-heading">ユーザー情報の編集</div>
     <div class="form users-form">
       <div class="form-body">
@@ -13,8 +15,6 @@
         <%= f.text_field :name %>
         <%= f.label "メールアドレス" %>
         <%= f.text_field :email %>
-        <%= f.label "パスワード" %>
-        <%= f.password_field :password %>
         <%= f.label "性別" %>
         <%= f.select :gender,  {"男性": 1, "女性": 2}, { include_blank: '選択してください'} %>
         <%= f.label "身長" %>

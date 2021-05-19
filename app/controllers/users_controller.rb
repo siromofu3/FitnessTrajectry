@@ -11,7 +11,7 @@ class UsersController < ApplicationController
   
 
   def show
-    @user = User.find_by(id: params[:id])
+    @user = User.find(params[:id])
     
     if @user.gender == "1"
       @user_gender = "男性"
@@ -58,14 +58,13 @@ class UsersController < ApplicationController
   end
 
   def edit
-    @user = User.find_by(id: params[:id])
+    @user = User.find(params[:id])
   end
   
   def update
-    @user = User.find_by(id: params[:id])
+    @user = User.find(params[:id])
     @user.name = user_params[:name]
     @user.email = user_params[:email]
-    @user.password = user_params[:password]
     @user.birthday = user_params[:birthday]
     @user.gender = user_params[:gender]
     @user.user_height = user_params[:user_height]
@@ -93,7 +92,6 @@ class UsersController < ApplicationController
     if @user
       session[:user_id] = @user.id
       flash[:notice] = "ログインしました"
-      # redirect_to("/users/#{@user.id}")
       redirect_to user_path(@user)
     else
       @error_message = "メールアドレスまたはパスワードが間違っています"
@@ -106,12 +104,11 @@ class UsersController < ApplicationController
   def logout
     session[:user_id] = nil
     flash[:notice] = "ログアウトしました"
-    # redirect_to("/login")    
     redirect_to login_path    
   end
   
   def likes
-    @user = User.find_by(id: params[:id])
+    @user = User.find(params[:id])
     @likes = Like.where(user_id: @user.id)    
 
     if @user.gender == "1"
@@ -140,7 +137,6 @@ class UsersController < ApplicationController
   def ensure_correct_user
     if @current_user.id != params[:id].to_i
       flash[:notice] = "権限がありません"
-      # redirect_to("/users/index") 
       redirect_to users_path
     end
   end
@@ -148,7 +144,7 @@ class UsersController < ApplicationController
 
   private
   def user_params
-    params.require(:user).permit( :name, :email, :password, :birthday,
+    params.require(:user).permit( :name, :email, :birthday,
                                   :gender, :user_height, :description)
   end
 
