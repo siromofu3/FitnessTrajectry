@@ -27,7 +27,7 @@ ActiveRecord::Schema.define(version: 2021_03_16_102810) do
     t.string "meal_menu"
     t.integer "body_fat_percentage"
     t.integer "total_calorie"
-    t.string "image_name"
+    # t.string "image_name"
     t.date "recording_date"
     t.integer "user_id"
     t.string "post_image_name"
