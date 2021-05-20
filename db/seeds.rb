@@ -25,8 +25,8 @@ end
    times += 1
     User.create!(
       id: times,
-      name: "#{Faker:Pokemon.name}",
-      email: "#{Faker:Pokemon.name}@sample.com",
+      name: "#{Faker::Pokemon.name}",
+      email: "#{Faker::Pokemon.name}@sample.com",
       password: 'password',
       gender: rand(1..2),
       icon_image_name: 'default_user_image.jpg', 
