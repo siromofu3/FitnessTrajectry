@@ -1,79 +1,82 @@
 
 # Seed実行時にTruncateするテーブルはコメント外す
 tables_to_initialize = [
-  # :users, 
-  # :posts,
-  # :likes,                             # 店舗ユーザ
-  # :issued_coupons # 発行クーポン
+  :users, 
+  :posts,
+  :likes, 
 ]
+
 # 再投入対象のテーブルを初期化
-  tables_to_initialize.each do |table|
-    ActiveRecord::Base.connection.execute("DELETE FROM #{table}") if table != "schema_migrations"
-    ActiveRecord::Base.connection.execute("DELETE FROM sqlite_sequence where name='#{table}'") if table != "schema_migrations"
-  end                                                                                                                               
- ActiveRecord::Base.connection.execute("VACUUM")
+tables_to_initialize.each do |table|
+  ActiveRecord::Base.connection.execute("TRUNCATE #{table}")
+  puts "truncated #{table}"
+end
 
-# Faker::Config.locale = :ja
+#   tables_to_initialize.each do |table|
+#     ActiveRecord::Base.connection.execute("DELETE FROM #{table}") if table != "schema_migrations"
+#     ActiveRecord::Base.connection.execute("DELETE FROM sqlite_sequence where name='#{table}'") if table != "schema_migrations"
+#   end                                                                                                                               
+#  ActiveRecord::Base.connection.execute("VACUUM")
 
-# user
-# User.create!(
-#   id: 111,
-#   name: 'Shingo',
-#   email: 'shingo@sample.com',
-#   password: 'shingo',
-#   gender: 1,
-#   icon_image_name: '3.jpg', 
-#   birthday: '1990-12-28',
-#   user_height: 173,
-#   description: '筋トレにハマってます！みなさん一緒に頑張りましょう！'
-# )
-# User.create!(
-#   id: 112,
-#   name: 'ぴよ',
-#   email: 'piyo@sample.com',
-#   password: 'piyo',
-#   gender: 2,
-#   icon_image_name: 'default_user_image.jpg', 
-#   birthday: '1995-07-21',
-#   user_height: 157,
-#   description: '初心者ですが頑張ります！'
-# )
-# User.create!(
-#   id: 113,
-#   name: 'くろもふ',
-#   email: 'kuromofu@sample.com',
-#   password: 'kuromofu',
-#   gender: 1,
-#   icon_image_name: 'default_user_image.jpg', 
-#   birthday: '1980-11-28',
-#   user_height: 180,
-#   description: 'よろしくお願いします'
-# )
+ Faker::Config.locale = :ja
+ 
+ # user
+ 10.times do |times|
+   times += 1
+    User.create!(
+      id: times,
+      name: "#{Faker:Pokemon.name}",
+      email: "#{Faker:Pokemon.name}@sample.com",
+      password: 'password',
+      gender: rand(1..2),
+      icon_image_name: 'default_user_image.jpg', 
+      birthday: "#{rand(1980..2003)}-#{rand(10..12)}-#{10..28}",
+      user_height: rand(153..175),
+      description: "筋トレにハマってます！みなさん一緒に頑張りましょう！ちなみに好きなポケモンは#{Faker:Pokemon.name}です"
+    )
+  end
+
+  User.create!(
+    id: 100,
+    name: "しろもふ",
+    email: "siromofu@sample.com",
+    password: 'password',
+    gender: 1,
+    icon_image_name: '3.jpg', 
+    birthday: "1990-12-28",
+    user_height: 173,
+    description: "筋トレにハマってます！みなさん一緒に頑張りましょう！転職活動中です！"
+  )
 
 
 # posts
-
-9.times do |times|
+10.times do |times|
   times += 1
-Post.create!(
-  body_weight: 60 - 2 * times,
-  training_menu: "",
-  meal_menu: "",
-  body_fat_percentage: 20,
-  total_calorie: 2000,
-  recording_date: "2021-03-#{times}",
-  user_id: 112,
-)
-Post.create!(
-  body_weight: 60 - times,
-  training_menu: "",
-  meal_menu: "",
-  body_fat_percentage: 20 - times,
-  total_calorie: 2000,
-  recording_date: "2021-03-1#{times}",
-  user_id: 111,
-)
+  10.times do 
+    Post.create!(
+      body_weight: rand(50..60),
+      training_menu: nil,
+      meal_menu: nil,
+      body_fat_percentage: rand(10..20),
+      total_calorie: rand(1500..2500),
+      recording_date: "2020-#{rand(10..12)}-#{10..28}",
+      user_id: times,
+    )
+  end
 end
+
+  10.times do 
+    Post.create!(
+      body_weight: rand(60..70),
+      training_menu: nil,
+      meal_menu: nil,
+      body_fat_percentage: rand(15..25),
+      total_calorie: rand(2000..2500),
+      recording_date: "2020-#{rand(10..12)}-#{10..28}",
+      user_id: 100,
+    )
+  end
+
 
 # StoreUser.create!(
 #   email: 'sample1@gmail.com'
