@@ -24,7 +24,7 @@ gem "jbuilder", "~> 2.7"
 # グラフ作成ツール
 gem "chartkick"
 
-# グラフ作成ツール
+# ランダムデータ作成
 gem "faker"
 
 # Use Active Storage variant

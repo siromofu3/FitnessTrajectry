@@ -7,16 +7,16 @@ tables_to_initialize = [
 ]
 
 # 再投入対象のテーブルを初期化(products => pg)
-# tables_to_initialize.each do |table|
-#   ActiveRecord::Base.connection.execute("TRUNCATE #{table}")
-#   puts "truncated #{table}"
-# end
+tables_to_initialize.each do |table|
+  ActiveRecord::Base.connection.execute("TRUNCATE #{table}")
+  puts "truncated #{table}"
+end
 
 # 再投入対象のテーブルを初期化(develop => sqlite3)
-  tables_to_initialize.each do |table|
-    ActiveRecord::Base.connection.execute("DELETE FROM #{table}")
-  end                                                                                                                               
-  ActiveRecord::Base.connection.execute("VACUUM")                                                                                               
+#   tables_to_initialize.each do |table|
+#     ActiveRecord::Base.connection.execute("DELETE FROM #{table}")
+#   end                                                                                                                               
+#   ActiveRecord::Base.connection.execute("VACUUM")                                                                                               
 
  Faker::Config.locale = :ja
  
