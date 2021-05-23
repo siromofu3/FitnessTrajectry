@@ -5,26 +5,30 @@
   margin: 0 auto;
   padding: 180px 8% 0;
   max-width: 1200px;
+  color: white;
+  span{
+    background-color: rgba(99, 99, 99, 0.5);
+  }
+  h2 {
+    font-size: 64px;
+    font-weight: 500;
+    line-height: 1.4;
+    margin-bottom: 50px;
+  }
     .about-header{
       margin-bottom: 60px;
       color: white;
       background-color: rgba(99, 99, 99, 0.5);
       border-radius: 10px;
       padding: 30px;
-      h2 {
-        font-size: 64px;
-        font-weight: 500;
-        line-height: 1.4;
-        margin-bottom: 50px;
-      }
       p {
-        margin-top: 28px;
         font-weight: 400;
         font-size: 22px;
       }
       ul{
         font-weight: 400;
         margin-top: 30px;
+        margin-bottom: 30px;
         margin-left: 40px;
         li{
           margin-left: 20px;
@@ -67,9 +71,9 @@
     .about-bottom{
       text-align: center;
       margin-bottom: 100px;
-      background-color: rgba(99, 99, 99, 0.5);
-      border-radius: 10px;
-      padding: 30px;
+      // background-color: rgba(99, 99, 99, 0.5);
+      // border-radius: 10px;
+      // padding: 30px;
       p{
         color: white;
         margin-bottom: 30px;

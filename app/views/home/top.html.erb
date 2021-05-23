@@ -1,19 +1,19 @@
-<div class="main top-main">
-<div class="top-wrapper">
-  <div class="top-message">
-    <h2>理想のカラダを手に入れる！</h2>
-    <h3>フィットネスの記録を投稿しよう！</h3>
+<div class="top-main">
+  <div class="top-wrapper">
+    <div class="top-message">
+      <h2>理想のカラダを手に入れる！</h2>
+      <h3>フィットネスの記録を投稿しよう！</h3>
+    </div>
+    <div class="top-about">
+      <span><%= link_to "＜FitnessTrajectoryについて詳しく知る＞", about_path %></span>
+    </div>
+    <div class="top-signup">
+      <%= link_to signup_path do %>
+      <button class="blue-btn">新規ユーザー登録</button>
+      <% end %>
+    </div>
+    <div class="top-login">
+      <span><%= link_to "アカウントをお持ちの方はこちらからログイン", login_path %></span>
+    </div>
   </div>
-  <div class="top-about">
-    <%= link_to "＜FitnessTrajectoryについて詳しく知る＞", about_path %>
-  </div>
-  <div class="top-signup">
-    <%= link_to signup_path do %>
-    <button class="blue-btn">新規ユーザー登録</button>
-    <% end %>
-  </div>
-  <div class="top-login">
-    <%= link_to "アカウントをお持ちの方はこちらからログイン", login_path %>
-  </div>
-</div>
 </div>

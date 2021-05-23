@@ -10,8 +10,9 @@
   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
   <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
 
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css" integrity="sha384-vSIIfh2YWi9wW0r9iZe7RJPrKwp6bG+s9QZMoITbCckVJqGCCRhc+ccxNcdpHuYu" crossorigin="anonymous">
-  
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css"
+    integrity="sha384-vSIIfh2YWi9wW0r9iZe7RJPrKwp6bG+s9QZMoITbCckVJqGCCRhc+ccxNcdpHuYu" crossorigin="anonymous">
+
 </head>
 
 <body>
@@ -53,14 +54,32 @@
       <% end %>
     </ul>
   </header>
-  <% if flash[:notice] %>
-  <div class="flash">
-    <%= flash[:notice] %>
-  </div>
-  <% end %>
-  <%= yield %>
+    <% if flash[:notice] %>
+    <div class="flash">
+      <%= flash[:notice] %>
+    </div>
+    <% end %>
+  <main>
+    <%= yield %>
+  </main>
+  <footer>
+    <div class="link-wrapper">
+      <p>|</p>
+      <% if @current_user %>
+      <%= link_to "トップページ", posts_path %>
+      <% else %>
+      <%= link_to "トップページ", root_path %>
+      <% end %>
+      <p>|</p>
+      <%= link_to "お問い合わせ", contact_path %>
+      <p>|</p>
+      <%= link_to "利用規約", terms_path %>
+      <p>|</p>
+    </div>
+    <div class="copyright">
+      <p>© 2021 FitnessTrajectory siromofu3</p>
+    </div>
+  </footer>
 </body>
-<footer>
-</footer>
 
 </html>

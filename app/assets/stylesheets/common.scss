@@ -1,52 +1,58 @@
 
 /* 共通レイアウト ================================ */
-body {
-  color: #2d3133;
-  // background-color: #3367D6;
-  background-image: url('/top_images/gym_1.jpg');
-  background-color:rgba(255,255,255,0.35);
-  background-blend-mode:lighten;
-  background-attachment: fixed;
-  background-size: cover;
-  background-position: center;
-  margin: 0;
-  min-height: 1vh;
-}
 
-.main {
-  position: absolute;
-  top: 64px;
-  width: 100%;
-  height: auto;
-  min-height: 100%;
-}
-
-.container {
-  max-width: 600px;
-  margin: 50px auto;
-  padding-left: 15px;
-  padding-right: 15px;
-  clear: both;
-}
-
-.btn-wrapper{
-  display: block;
-  text-align: center;
-  .blue-btn {
-    border: none;
-    background-color: #3367D6;
-    color: white;
-    cursor: pointer;
-    font-weight: 300;
-    font-size: 15px;
-    line-height: 30px;
-    width: 200px;
-    border-radius: 5px;
-    margin-top: 10px;
-    margin-bottom: 35px;
+  body {
+    background-image: url('/top_images/gym_1.jpg');
+    background-color:rgba(255,255,255,0.35);
+    background-blend-mode:lighten;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    margin: 0;
+    min-height: 1vh;
   }
-}
+  
+  .main {
+    position: absolute;
+    top: 64px;
+    // margin-top: 64px;
+    // position: relative;
+    // top: 0;
+    width: 100%;
+    // height: auto;
+    // min-height: 100%;
+  }
 
+  .top-clearance{
+    padding-top: 64px;
+  }
+  
+  .container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding-left: 15px;
+    padding-right: 15px;
+    clear: both;
+  }
+  
+  .btn-wrapper{
+    display: block;
+    text-align: center;
+    .blue-btn {
+      border: none;
+      background-color: #3367D6;
+      color: white;
+      cursor: pointer;
+      font-weight: 300;
+      font-size: 15px;
+      line-height: 30px;
+      width: 200px;
+      border-radius: 5px;
+      margin-top: 10px;
+      margin-bottom: 35px;
+    }
+  }
+  
 button:hover, a:hover{
   cursor: pointer;
   opacity: 0.8;
@@ -60,10 +66,11 @@ button:hover, a:hover{
   border-radius: 10px;
 }
   
-  /* header ================================ */
+/* header ================================ */
 header {
   height: 64px;
   position: absolute;
+  top: 0;
   z-index: 10;
   width: 100%;
   background-color: #3367D6;
@@ -103,6 +110,36 @@ header {
       color: white;
       margin: 0;
       font-size: 13px;
+    }
+  }
+}
+
+
+/* footer ================================ */
+footer {
+  width: 100%;
+  background-color: #3367D6;
+  color: white;
+  padding: 15px 0;
+  text-align: center;
+  .link-wrapper {
+    display: flex;
+    justify-content: center;
+    a, p{
+      color: white;
+    }
+    a{
+      padding: 3px 7px 0 7px;
+      font-size: 14px;
+    }
+    p{
+      font-size: 18px;
+    }
+  }
+  .copyright{
+    p{
+      font-size: 12px;
+      margin-top: 5px;
     }
   }
 }

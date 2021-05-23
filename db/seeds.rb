@@ -32,7 +32,7 @@ end
       password: 'password',
       gender: rand(1..2),
       icon_image_name: 'default_user_image.jpg', 
-      birthday: "#{rand(1980..2003)}-#{rand(10..12)}-#{10..28}",
+      birthday: "#{rand(1980..2003)}-#{rand(1..12)}-#{1..28}",
       user_height: rand(153..175),
       description: "筋トレにハマってます！みなさん一緒に頑張りましょう！ちなみに好きなポケモンは#{pokemon_name}です！"
     )
@@ -68,10 +68,10 @@ end
   times += 1
   10.times do 
     Post.create!(
-      body_weight: rand(50..70),
+      body_weight: rand(50..65),
       training_menu: "ベンチプレス40kg 10回 3セット\nスクワット 20回 3セット",
       meal_menu: "卵3個,鶏肉1kg,ご飯3合",
-      body_fat_percentage: rand(10..30),
+      body_fat_percentage: rand(15..25),
       total_calorie: rand(1500..2500),
       recording_date: "2020-#{rand(1..12)}-#{rand(1..28)}",
       user_id: 500 + times,
@@ -81,10 +81,10 @@ end
 
   10.times do 
     Post.create!(
-      body_weight: rand(50..70),
+      body_weight: rand(50..65),
       training_menu: "ベンチプレス60kg 10回 3セット\nスクワット 20回 3セット",
       meal_menu: "卵3個,鶏肉1kg,ご飯3合",
-      body_fat_percentage: rand(10..30),
+      body_fat_percentage: rand(15..25),
       total_calorie: rand(1500..2500),
       recording_date: "2020-#{rand(1..12)}-#{rand(1..28)}",
       user_id: 100,
@@ -93,7 +93,7 @@ end
 
   10.times do 
     Post.create!(
-      body_weight: rand(50..70),
+      body_weight: rand(57..70),
       training_menu: "ベンチプレス50kg 10回 3セット\nスクワット 20回 3セット",
       meal_menu: "卵3個,鶏肉1kg,ご飯3合",
       body_fat_percentage: rand(15..25),

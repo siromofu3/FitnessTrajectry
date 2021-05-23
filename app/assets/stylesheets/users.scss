@@ -1,5 +1,6 @@
 /* users/index ================================ */
 .users-index {
+  padding-top: 64px;
   .user-index-content{
     display: inline-block;
     .users-heading {
@@ -52,6 +53,7 @@
 
 /* users/show ================================ */
 .user-show {
+  padding-top: 64px;
   .user-show-content{
     display: inline-block;
     .user {
@@ -139,4 +141,8 @@
 /* users/new, users/edit ================================ */
 .users-form input {
   margin-bottom: 15px;
+}
+
+.users-new, .user-edit{
+  padding-top: 64px;
 }
