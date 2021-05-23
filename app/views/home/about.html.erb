@@ -1,7 +1,78 @@
 <div class="about-main">
-  <h2>FitnessTrajectoryとは</h2>
-  <p>
-    フィットネスの軌跡を投稿できるサービスです。
-    みんなと状況をシェアしてモチベーションを高めましょう。
-  </p>
+  <div class="about-header">
+    <h2>FitnessTrajectoryとは</h2>
+    <p><span>フィットネスの記録を投稿するSNSです。<br>フィットネスに関してこんなお悩みを抱えている人は多いのではないでしょうか？</span></p>
+    <ul><span>
+      <li><span>モチベーションが続かなくてフィットネスがなかなか継続できない...</span></li>
+      <li>かっこいい身体の人がどんなトレーニングをしているのか気になる...</li>
+      <li>ボディメイクに適した食事管理を知りたい...</li>
+      <li>フィットネスの成果を把握して今後に活かしたい...</li>
+    </span></ul>
+    <p>FitnessTrajectoryはこのようなお悩みを解決するために生まれました。<br>
+      具体的には以下のような機能があります。</p>
+  </div>
+  <div class="about-content">
+    <div class="content-wrapper">
+      <div class="content-text">
+        <h3>◆グラフで成果を確認◆</h3>
+        <p>日々の記録から集計されたデータをもとに、体重や体脂肪率をグラフで表示します。</p>
+        <p>グラフから傾向をつかんで日々のフィットネスや食事管理を改善していきましょう。</p>
+      </div>
+      <div class="content-image">
+        <img src="/top_images/about_5.png">
+      </div>
+    </div>
+    <div class="content-wrapper">
+      <div class="content-image">
+        <img src="/top_images/about_1.png">
+      </div>
+      <div class="content-text">
+        <h3>◆記録できる項目多数◆</h3>
+        <p>体重や体脂肪率などのコンディション、トレーニングメニュー、食事メニューや総摂取カロリーなど、体型管理に必要な幅広い情報を記録できます。</p>
+        <p>写真も投稿できるのでビフォーアフターの比較もできます。</p>
+      </div>
+    </div>
+    <div class="content-wrapper">
+      <div class="content-text">
+        <h3>◆フィットネス状況をシェア◆</h3>
+        <p>フィットネスの状況をみんなでシェアできます。</p>
+        <p>ひとりでは続けるのが難しくても、お互いを刺激し合うことで続けるモチベーションに繋がります。</p>
+        <p>理想に近いカラダの人のメニューを参考にするのも良いでしょう。</p>
+      </div>
+      <div class="content-image">
+        <img src="/top_images/about_2.png">
+      </div>
+    </div>
+    <div class="content-wrapper">
+      <div class="content-image">
+        <img src="/top_images/about_4.png">
+      </div>
+      <div class="content-text">
+        <h3>◆日々の記録を蓄積◆</h3>
+        <p>日々のフィットネスや食事管理の記録をデータとして蓄積できます。</p>
+        <p>フィットネスを継続するほど記録が目に見えて増えていくので、継続へのモチベーションにも繋がります。</p>
+      </div>
+    </div>
+    <div class="content-wrapper">
+      <div class="content-text">
+        <h3>◆いいね機能で応援◆</h3>
+        <p>他のユーザーの投稿へいいね！を押せます。</p>
+        <p>かっこいいカラダの人や頑張っている人を見つけたら、いいね！を押してエールを送りましょう。</p>
+      </div>
+      <div class="content-image">
+        <img src="/top_images/about_3.png">
+      </div>
+    </div>
+  </div>
+  <div class="about-bottom">
+    <p>さぁ、みんなとフィットネスの状況をシェアしてモチベーションを高め合い<br>理想のカラダを手に入れましょう！</p>
+    <div class="about-signup">
+      <%= link_to signup_path do %>
+      <button class="blue-btn">新規ユーザー登録</button>
+      <% end %>
+    </div>
+    <div class="about-login">
+      <%= link_to "アカウントをお持ちの方はこちらからログイン", login_path %>
+    </div>
+  </div>
 </div>

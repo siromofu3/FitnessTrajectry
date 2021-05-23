@@ -47,6 +47,11 @@ body {
   }
 }
 
+button:hover, a:hover{
+  cursor: pointer;
+  opacity: 0.8;
+}
+
 .background-white{
   background-color: whitesmoke;
   margin: 0 auto;

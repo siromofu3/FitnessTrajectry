@@ -20,6 +20,7 @@
         <li>食事メニュー：<%= @post.meal_menu %></li>
         <li>総摂取カロリー：<%= @post.total_calorie %>kcal</li>
       </ul>
+      <div class="likes-wrapper">
       <% if Like.find_by(user_id: @current_user.id, post_id: @post.id) %>
       <%= link_to "/likes/#{@post.id}/destroy", method: "post" do %>
       <i class="fas fa-heart like-btn-unlike"></i>
@@ -31,6 +32,7 @@
       <% end %>
       <%= @likes_count %>
       <% if @current_user.id == @post.user.id %>
+      </div>
       <div class="post-menus">
         <%= link_to "編集", edit_post_path(@post) %>
         <%= link_to "削除", post_path(@post), method: "delete" %>

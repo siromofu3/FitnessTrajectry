@@ -14,8 +14,8 @@
               <img src="<%= "/user_images/#{post.user.icon_image_name}" %>">
             </div>
             <div class="post-center">
-              <%= link_to post.user.name, post_path(post.user) %>
               <div class="post-user-name">
+                <p><%= post.user.name %></p>
               </div>
               <ul>
                 <li>投稿日：<%= post.recording_date %></li>

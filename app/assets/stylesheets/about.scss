@@ -1,0 +1,105 @@
+
+
+/* about ================================ */
+.about-main {
+  margin: 0 auto;
+  padding: 180px 8% 0;
+  max-width: 1200px;
+    .about-header{
+      margin-bottom: 60px;
+      color: white;
+      background-color: rgba(99, 99, 99, 0.5);
+      border-radius: 10px;
+      padding: 30px;
+      h2 {
+        font-size: 64px;
+        font-weight: 500;
+        line-height: 1.4;
+        margin-bottom: 50px;
+      }
+      p {
+        margin-top: 28px;
+        font-weight: 400;
+        font-size: 22px;
+      }
+      ul{
+        font-weight: 400;
+        margin-top: 30px;
+        margin-left: 40px;
+        li{
+          margin-left: 20px;
+          list-style-type: square;
+          font-size: 19px;
+        }
+      }
+    }
+    .about-content{
+      .content-wrapper{
+        background-color: rgba(99, 99, 99, 0.5);
+        border-radius: 10px;
+        display: flex;
+        margin-bottom: 70px;
+        .content-text{   
+          width: 50%;
+          padding: 30px;
+          color: white;
+          h3{
+            font-size: 24px;
+            text-align: center;
+            margin-bottom: 20px;
+          }
+          p{
+            margin-bottom: 20px;
+            font-size: 18px;
+            font-weight: 400;
+          }
+        }
+        .content-image{
+          width: 50%;
+          padding: 30px;
+          img{
+            width: 100%;
+            object-fit: contain;
+          }
+        }
+      }
+    }
+    .about-bottom{
+      text-align: center;
+      margin-bottom: 100px;
+      background-color: rgba(99, 99, 99, 0.5);
+      border-radius: 10px;
+      padding: 30px;
+      p{
+        color: white;
+        margin-bottom: 30px;
+        font-weight: 500;
+        font-size: 22px;
+      }
+      .about-signup{ 
+        button{
+          background-color: #3367D6;
+          color: white;
+          border: none;
+          border-radius: 8px;
+          margin: 20px 0;
+          font-size: 24px;
+          padding:10px 40px;
+        }
+      }
+      .about-login{
+        margin-top: 5px;
+        a{
+          color: white;
+          font-size: 16px;
+          font-weight: 350;
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+  
+  .about-img {
+    width: 84%;
+  }
+  

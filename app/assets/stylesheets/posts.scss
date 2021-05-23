@@ -39,6 +39,10 @@
             a:hover {
               color: #3367D6;
             }
+            p {
+              font-weight: 600;
+              font-size: 14px;
+            }
           }
         }
         .post-right {
@@ -99,7 +103,7 @@
     text-align: center;
     width: 100%;
     .post-image {
-      width: 300px;
+      width: 260px;
       margin: 15px 0;
     }
   }
@@ -111,11 +115,19 @@
       font-size: 14px;
     }
   }
+  .likes-wrapper{
+    // font-size: 20px;
+    margin-top: 5px;
+  }
 }
 
 .post-time {
   color: #8899a6;
   margin-bottom: 10px;
+}
+
+.like-btn, .like-btn-unlike{
+  font-size: 23px;
 }
 
 .like-btn {

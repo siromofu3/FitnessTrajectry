@@ -1,14 +1,18 @@
 <div class="main posts-new">
   <div class="container">
-    <h1 class="form-heading">投稿する</h1>
-    <div class="form">
-      <div class="form-body">
-        <% @post.errors.full_messages.each do |message| %>
-        <div class="form-error">
-          <%= message %>
+    <div class="background-white">
+      <div class="posts-new-content">
+        <h1 class="form-heading">投稿する</h1>
+        <div class="form">
+          <div class="form-body">
+            <% @post.errors.full_messages.each do |message| %>
+            <div class="form-error">
+              <%= message %>
+            </div>
+            <% end %>
+            <%= render "posts/post_form" %>
+          </div>
         </div>
-        <% end %>
-          <%= render "shared/post_form" %>
       </div>
     </div>
   </div>
