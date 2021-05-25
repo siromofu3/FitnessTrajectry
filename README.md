@@ -1,24 +1,25 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+1.タイトル
+  FitnessTrajectry
+  https://fitnesstrajectry.herokuapp.com
 
-Things you may want to cover:
+2.概要
+  フィットネスの状況をシェアするSNSです。
+  自分自身の経験も踏まえて、次のような悩みを抱える人のために作成しました。
+  ・モチベーションが続かなくてフィットネスがなかなか継続できない
+  ・かっこいい身体の人がどんなトレーニングをしているのか気になる
+  ・ボディメイクに適した食事管理を知りたい
+  ・フィットネスの成果を把握して今後に活かしたい
 
-* Ruby version
+2.使用技術
+  Ruby 2.7.2
+  Ruby on Rails 6.1.3.2
+  PostgreSQL 1.2.3
+  chartkick
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+4.主な機能
+  ・ユーザー登録、ログイン機能
+  ・投稿機能(画像含む)
+  ・いいね機能
+  ・データの自動グラフ化
