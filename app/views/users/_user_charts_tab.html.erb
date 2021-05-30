@@ -24,5 +24,17 @@
         <%= line_chart @chart_fat_dates, height: "20vh" %>
       </div>
     </div>
+    <div class="line-chart">
+      <h3>総摂取カロリー(kcal)</h3>
+      <div class="line-chart-pc">
+        <%= line_chart @chart_calorie_dates, height: "200px" %>
+      </div>
+      <div class="line-chart-tablet">
+        <%= line_chart @chart_calorie_dates, height: "170px" %>
+      </div>
+      <div class="line-chart-phone">
+        <%= line_chart @chart_calorie_dates, height: "20vh" %>
+      </div>
+    </div>
   </div>
 </div>

@@ -30,6 +30,10 @@ class UsersController < ApplicationController
     @posts.each do |post|
       @chart_fat_dates.push([post.recording_date, post.body_fat_percentage])
     end
+    @chart_calorie_dates = []
+    @posts.each do |post|
+      @chart_calorie_dates.push([post.recording_date, post.total_calorie])      
+    end
     
     if @posts.count != 0
       @recent_weight = @posts[0].body_weight
