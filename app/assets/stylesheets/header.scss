@@ -3,7 +3,6 @@
   /* header ================================ */
   header {
     height: 7vh;
-    // position: absolute;
     position: fixed;
     top: 0;
     z-index: 10;
@@ -17,6 +16,7 @@
       a{
         color: white;
         font-size: 18px;
+        font-weight: 500;
       }
     }
     
@@ -35,7 +35,7 @@
         top: 7vh;
       }
       li {
-        float: left;
+        // float: left;
         text-align: center;
         border: solid 1px  rgba(51,103,214,1);
       }
@@ -44,6 +44,7 @@
         font-size: 13px;
         color: white;
         line-height: 6vh;
+        font-weight: 400;
       }
     }
   }
@@ -61,7 +62,7 @@
 /* header ================================ */
 header {
   height: 64px;
-  position: absolute;
+  position: fixed;
   top: 0;
   z-index: 10;
   width: 100%;
@@ -115,7 +116,7 @@ header {
 /* header ================================ */
 header {
   height: 64px;
-  position: absolute;
+  position: fixed;
   top: 0;
   z-index: 10;
   width: 100%;
