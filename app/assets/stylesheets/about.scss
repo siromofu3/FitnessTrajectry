@@ -1,5 +1,219 @@
+/* スマートフォン向けレイアウト ================================ */
+@media screen and (max-width: 480px){
+/* about ================================ */
+.about-main {
+  margin: 0 auto;
+  padding: 15vh 7vw 10vh 7vw;
+  color: white;
+  span{
+    background-color: rgba(99, 99, 99, 0.5);
+  }
+  h2 {
+    font-size: 26px;
+    font-weight: 500;
+    line-height: 1.4;
+    margin-bottom: 50px;
+  }
+    .about-header{
+      margin-bottom: 5vh;
+      color: white;
+      background-color: rgba(99, 99, 99, 0.5);
+      border-radius: 10px;
+      padding: 1.5vh;
+      p {
+        font-weight: 400;
+        font-size: 14px;
+      }
+      ul{
+        font-weight: 400;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        margin-left: 15px;
+        li{
+          margin-left: 1vw;
+          list-style-type: square;
+          font-size: 13px;
+        }
+      }
+    }
+    .about-content{
+      .content-wrapper{
+        background-color: rgba(99, 99, 99, 0.5);
+        border-radius: 10px;
+        // display: flex;
+        margin-bottom: 5vh;
+        .content-text{   
+          // width: 50%;
+          padding: 1.5vh;
+          color: white;
+          h3{
+            font-size: 15px;
+            text-align: center;
+            margin-bottom: 1vh;
+          }
+          p{
+            margin-bottom: 1vh;
+            font-size: 13px;
+            font-weight: 400;
+          }
+        }
+        .content-image{
+          // width: 50%;
+          padding: 0 1.5vh 1.5vh 1.5vh;
+          img{
+            width: 100%;
+            object-fit: contain;
+          }
+        }
+      }
+    }
+    .about-bottom{
+      text-align: center;
+      p{
+        color: white;
+        margin-bottom: 30px;
+        font-weight: 500;
+        font-size: 14px;
+      }
+      .about-signup{ 
+        button{
+          background-color: #3367D6;
+          color: white;
+          border: none;
+          border-radius: 8px;
+          margin: 20px 0;
+          font-size: 18px;
+          padding:10px 40px;
+        }
+      }
+      .about-login{
+        margin-top: 5px;
+        a{
+          color: white;
+          font-size: 12px;
+          font-weight: 350;
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+  
+  .about-img {
+    width: 84%;
+  }
+  
+}
 
 
+/* タブレット向けレイアウト ================================ */
+@media screen and (min-width: 481px) and (max-width: 959px){
+/* about ================================ */
+.about-main {
+  margin: 0 auto;
+  padding: 15vh 7vw 10vh 7vw;
+  color: white;
+  span{
+    background-color: rgba(99, 99, 99, 0.5);
+  }
+  h2 {
+    font-size: 50px;
+    font-weight: 500;
+    line-height: 1.4;
+    margin-bottom: 50px;
+  }
+    .about-header{
+      margin-bottom: 5vh;
+      color: white;
+      background-color: rgba(99, 99, 99, 0.5);
+      border-radius: 10px;
+      padding: 2vh 2vw;
+      p {
+        font-weight: 400;
+        font-size: 18px;
+      }
+      ul{
+        font-weight: 400;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        margin-left: 15px;
+        li{
+          margin-left: 20px;
+          list-style-type: square;
+          font-size: 16px;
+        }
+      }
+    }
+    .about-content{
+      .content-wrapper{
+        background-color: rgba(99, 99, 99, 0.5);
+        border-radius: 10px;
+        display: flex;
+        margin-bottom: 5vh;
+        .content-text{   
+          width: 50%;
+          padding: 2vh 2vw 2vh 2vw;
+          color: white;
+          h3{
+            font-size: 19px;
+            text-align: center;
+            margin-bottom: 20px;
+          }
+          p{
+            margin-bottom: 15px;
+            font-size: 16px;
+            font-weight: 400;
+          }
+        }
+        .content-image{
+          width: 50%;
+          padding: 2vh 2vw 2vh 2vw;
+          img{
+            width: 100%;
+            object-fit: contain;
+          }
+        }
+      }
+    }
+    .about-bottom{
+      text-align: center;
+      p{
+        color: white;
+        margin-bottom: 30px;
+        font-weight: 500;
+        font-size: 18px;
+      }
+      .about-signup{ 
+        button{
+          background-color: #3367D6;
+          color: white;
+          border: none;
+          border-radius: 8px;
+          margin: 20px 0;
+          font-size: 24px;
+          padding:10px 40px;
+        }
+      }
+      .about-login{
+        margin-top: 5px;
+        a{
+          color: white;
+          font-size: 16px;
+          font-weight: 350;
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+  
+  .about-img {
+    width: 84%;
+  }
+
+  }
+  
+
+/* PC向けレイアウト ================================ */
+@media screen and (min-width: 960px){
 /* about ================================ */
 .about-main {
   margin: 0 auto;
@@ -71,9 +285,6 @@
     .about-bottom{
       text-align: center;
       margin-bottom: 100px;
-      // background-color: rgba(99, 99, 99, 0.5);
-      // border-radius: 10px;
-      // padding: 30px;
       p{
         color: white;
         margin-bottom: 30px;
@@ -107,3 +318,5 @@
     width: 84%;
   }
   
+  }
+

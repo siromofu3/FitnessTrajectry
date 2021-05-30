@@ -1,6 +1,6 @@
-
-/* 共通レイアウト ================================ */
-
+/* スマートフォン向けレイアウト ============================ */
+@media screen and (max-width: 480px){
+/* 共通===================================================== */
   body {
     background-image: url('/top_images/gym_1.jpg');
     background-color:rgba(255,255,255,0.35);
@@ -9,18 +9,80 @@
     background-size: cover;
     background-position: center;
     margin: 0;
-    min-height: 1vh;
+    min-height: 100vh;
+    position: relative;
+    padding-bottom: 60px;
+    box-sizing: border-box;
+  }
+  
+  .main {
+    position: absolute;
+    width: 100%;
+  }
+
+  .container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding-left: 15px;
+    padding-right: 15px;
+    clear: both;
+    text-align: center;
+  }
+  
+  .btn-wrapper{
+    display: block;
+    text-align: center;
+    .blue-btn {
+      border: none;
+      background-color: #3367D6;
+      color: white;
+      cursor: pointer;
+      font-weight: 300;
+      font-size: 15px;
+      line-height: 30px;
+      width: 200px;
+      border-radius: 5px;
+      margin-bottom: 4vh;
+    }
+  }
+  
+button:hover, a:hover{
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+.background-white{
+  background-color: whitesmoke;
+  margin: 0 auto;
+  text-align: center;
+  padding: 1.5vh;
+  border-radius: 10px;
+  display: inline-block;
+}
+}
+
+
+/* タブレット向けレイアウト ================================ */
+@media screen and (min-width: 481px) and (max-width: 959px){
+/* 共通===================================================== */
+  body {
+    background-image: url('/top_images/gym_1.jpg');
+    background-color:rgba(255,255,255,0.35);
+    background-blend-mode:lighten;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    margin: 0;
+    min-height: 100vh;
+    position: relative;
+    padding-bottom: 60px;
+    box-sizing: border-box;
   }
   
   .main {
     position: absolute;
     top: 64px;
-    // margin-top: 64px;
-    // position: relative;
-    // top: 0;
     width: 100%;
-    // height: auto;
-    // min-height: 100%;
   }
 
   .top-clearance{
@@ -33,6 +95,7 @@
     padding-left: 15px;
     padding-right: 15px;
     clear: both;
+    text-align: center;
   }
   
   .btn-wrapper{
@@ -64,82 +127,76 @@ button:hover, a:hover{
   text-align: center;
   padding: 25px 30px;
   border-radius: 10px;
+  display: inline-block;
+}
 }
   
-/* header ================================ */
-header {
-  height: 64px;
-  position: absolute;
-  top: 0;
-  z-index: 10;
-  width: 100%;
-  background-color: #3367D6;
-  .header-logo {
-    float: left;
-    padding-left: 20px;
-    color: white;
-    font-size: 22px;
-    line-height: 64px;
-    a{
+/* PC向けレイアウト ================================ */
+@media screen and (min-width: 960px){
+/* 共通 ============================================ */
+  body {
+    background-image: url('/top_images/gym_1.jpg');
+    background-color:rgba(255,255,255,0.35);
+    background-blend-mode:lighten;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    margin: 0;
+    min-height: 100vh;
+    position: relative;
+    padding-bottom: 60px;
+    box-sizing: border-box;
+  }
+  
+  .main {
+    position: absolute;
+    top: 64px;
+    width: 100%;
+  }
+
+  .top-clearance{
+    padding-top: 64px;
+  }
+  
+  .container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding-left: 15px;
+    padding-right: 15px;
+    clear: both;
+    text-align: center;
+  }
+  
+  .btn-wrapper{
+    display: block;
+    text-align: center;
+    .blue-btn {
+      border: none;
+      background-color: #3367D6;
       color: white;
-      font-size: 22px;
+      cursor: pointer;
+      font-weight: 300;
+      font-size: 15px;
+      line-height: 30px;
+      width: 200px;
+      border-radius: 5px;
+      margin-top: 10px;
+      margin-bottom: 35px;
     }
   }
-  .header-menus {
-    float: right;
-    padding-right: 20px;
-    li {
-      float: left;
-      line-height: 64px;
-      font-size: 13px;
-      color: white;
-      padding-left: 15px;
-    }
-    a {
-      float: left;
-      font-size: 13px;
-      color: white;
-    }
-    .fa {
-      padding-right: 5px;
-    }
-    input[type="submit"] {
-      padding: 0 20px;
-      float: left;
-      line-height: 64px;
-      color: white;
-      margin: 0;
-      font-size: 13px;
-    }
-  }
+  
+button:hover, a:hover{
+  cursor: pointer;
+  opacity: 0.8;
 }
 
-
-/* footer ================================ */
-footer {
-  width: 100%;
-  background-color: #3367D6;
-  color: white;
-  padding: 15px 0;
+.background-white{
+  background-color: whitesmoke;
+  margin: 0 auto;
   text-align: center;
-  .link-wrapper {
-    display: flex;
-    justify-content: center;
-    a, p{
-      color: white;
-    }
-    a{
-      padding: 3px 7px 0 7px;
-      font-size: 14px;
-    }
-    p{
-      font-size: 18px;
-    }
-  }
-  .copyright{
-    p{
-      font-size: 12px;
-      margin-top: 5px;
-    }
-  }
+  padding: 25px 30px;
+  border-radius: 10px;
+  display: inline-block;
 }
+}
+  

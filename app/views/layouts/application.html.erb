@@ -24,6 +24,9 @@
       <%= link_to "FitnessTrajectory", root_path %>
       <% end %>
     </div>
+    <div class="menu-icon">
+      <i class="fas fa-bars"></i>
+    </div>
     <ul class="header-menus">
       <% if @current_user %>
       <li>
@@ -53,6 +56,7 @@
       </li>
       <% end %>
     </ul>
+
   </header>
     <% if flash[:notice] %>
     <div class="flash">

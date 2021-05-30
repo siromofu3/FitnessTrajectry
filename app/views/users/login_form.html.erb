@@ -10,9 +10,9 @@
           </div>
           <% end %>
           <%= form_tag login_path do %>
-          <p>メールアドレス</p>
+          <label>メールアドレス</label>
           <input type="text" name="email" value="<%= @email %>">
-          <p>パスワード</p>
+          <label>パスワード</label>
           <input type="password" name="password" value="<%= @password %>">
           <input type="submit" value="ログイン">
           <% end %>

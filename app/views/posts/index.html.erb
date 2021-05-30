@@ -10,7 +10,7 @@
         </div>
         <% @posts.each do |post| %>
         <div class="posts-index-wrapper">
-          <div class="posts-index-item">
+          <div class="posts-index-item clearfix">
             <%= link_to user_path(post.user) do %>
             <div class="post-left">
               <img src="<%= "/user_images/#{post.user.icon_image_name}" %>">
