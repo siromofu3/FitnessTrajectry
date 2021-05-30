@@ -19,7 +19,10 @@
           <%= f.label "性別" %>
           <%= f.select :gender,  {"男性": 1, "女性": 2}, { include_blank: '選択してください'} %>
           <%= f.label "身長" %>
-          <%= f.text_field :user_height %>
+          <div class="form-integer">
+            <%= f.text_field :user_height %>
+            <p>kg</p>
+          </div>
           <%= f.label "生年月日" %>
           <%= f.date_field :birthday %>
           <%= f.submit "新規登録" %>
