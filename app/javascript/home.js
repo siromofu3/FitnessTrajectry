@@ -14,5 +14,8 @@ document.addEventListener("turbolinks:load", function () {
     setTimeout("$('.flash').fadeOut('slow')", 5000) 
   });
 
+
+  
+
 });
 

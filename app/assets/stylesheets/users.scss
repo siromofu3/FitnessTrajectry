@@ -117,14 +117,18 @@
 
   .user-tabs {
     margin-top: 5vh;
-    background-color: white;
+    background-color: whitesmoke;
     overflow: hidden;
-    box-shadow: 0 2px 6px #c1ced7;
     li {
       float: left;
+      width: 20vw;
+      height: 5.5vh;
+      font-size: 12px;
+      line-height: 5.5vh;
+      box-shadow: 0 2px 6px #c1ced7;
     }
     li.active {
-      border-bottom: 2px solid #3367d6;
+      background-color: white;
       a {
         color: #57575f;
       }
@@ -138,10 +142,16 @@
   }
   .line-chart{
     width: 100%;
+    background-color: white;
+    box-shadow: 0 2px 6px #c1ced7;
+    padding: 0 5px 20px 5px;
     .line-chart-pc, .line-chart-tablet{
       display: none;
     }
+  }
 
+  #user-posts-tab, #user-likes-tab{
+    display: none;
   }
 
 
@@ -279,14 +289,18 @@
 
   .user-tabs {
     margin-top: 40px;
-    background-color: white;
+    background-color: whitesmoke;
     overflow: hidden;
-    box-shadow: 0 2px 6px #c1ced7;
     li {
       float: left;
+      width: 13vw;
+      height: 45px;
+      font-size: 15px;
+      line-height: 45px;
+      box-shadow: 0 2px 6px #c1ced7;
     }
     li.active {
-      border-bottom: 2px solid #3367d6;
+      background-color: white;
       a {
         color: #57575f;
       }
@@ -299,10 +313,16 @@
   }
   .line-chart{
     width: 100%;
+    background-color: white;
+    box-shadow: 0 2px 6px #c1ced7;
+    padding: 0 5px 20px 5px;
     .line-chart-pc, .line-chart-phone{
       display: none;
     }
+  }
 
+  #user-posts-tab, #user-likes-tab{
+    display: none;
   }
 
 
@@ -427,7 +447,7 @@
       .chart-wrapper{
         text-align: center;
         h3{
-          padding: 15px 0;
+          padding: 15px 0 5px 0;
         }
       }
     }
@@ -435,17 +455,21 @@
         
   .user-tabs {
     margin-top: 40px;
-    background-color: white;
+    background-color: whitesmoke;
     overflow: hidden;
-    box-shadow: 0 2px 6px #c1ced7;
+    &:hover{
+      cursor: pointer;
+    }
     li {
       float: left;
+      width: 100px;
+      height: 45px;
+      font-size: 15px;
+      line-height: 45px;
+      box-shadow: 0 2px 6px #c1ced7;
     }
     li.active {
-      border-bottom: 2px solid #3367d6;
-      a {
-        color: #57575f;
-      }
+      background-color: white;
     }
     a {
       display: inline-block;
@@ -455,11 +479,18 @@
   }
   .line-chart{
     width: 100%;
+    background-color: white;
+    box-shadow: 0 2px 6px #c1ced7;
+    padding: 0 5px 20px 5px;
+
     .line-chart-tablet, .line-chart-phone{
       display: none;
     }
   }
 
+  #user-posts-tab, #user-likes-tab{
+    display: none;
+  }
 
   /* users/new, users/edit ================================ */
   .users-form input {

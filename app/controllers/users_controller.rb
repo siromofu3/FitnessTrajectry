@@ -9,9 +9,10 @@ class UsersController < ApplicationController
     @users = User.all
   end
   
-
+  
   def show
     @user = User.find(params[:id])
+    @likes = Like.where(user_id: @user.id)    
     
     if @user.gender == "1"
       @user_gender = "男性"
@@ -34,7 +35,6 @@ class UsersController < ApplicationController
       @recent_weight = @posts[0].body_weight
       @recent_fat_percentage = @posts[0].body_fat_percentage
     end  
-
   end 
   
 
@@ -47,7 +47,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     @user.description = "理想のカラダを目指して一緒に頑張りましょう！"
     @user.icon_image_name = "default_user_image.jpg"
-
+    
     if @user.save
       session[:user_id] = @user.id
       flash[:notice] = "ユーザー登録が完了しました"
@@ -105,33 +105,6 @@ class UsersController < ApplicationController
     session[:user_id] = nil
     flash[:notice] = "ログアウトしました"
     redirect_to login_path    
-  end
-  
-  def likes
-    @user = User.find(params[:id])
-    @likes = Like.where(user_id: @user.id)    
-
-    if @user.gender == "1"
-      @user_gender = "男性"
-    else
-      @user_gender = "女性"
-    end
-
-    @age = @user.age
-    @posts = Post.where(user_id: @user.id).order(recording_date: "desc")
-    @chart_weight_dates = []
-    @posts.each do |post|
-      @chart_weight_dates.push([post.recording_date, post.body_weight])
-    end
-    @chart_fat_dates = []
-    @posts.each do |post|
-      @chart_fat_dates.push([post.recording_date, post.body_fat_percentage])
-    end
-    
-    if @posts.count != 0
-      @recent_weight = @posts[0].body_weight
-      @recent_fat_percentage = @posts[0].body_fat_percentage
-    end  
   end
   
   def ensure_correct_user

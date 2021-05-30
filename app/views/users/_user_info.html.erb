@@ -18,29 +18,3 @@
       <%= link_to "プロフィールを編集", edit_user_path(@user) %>
       <% end %>
     </div>
-    <div class="chart-wrapper">
-      <div class="line-chart">
-        <h3>体重(kg)</h3>
-        <div class="line-chart-pc">
-        <%= line_chart @chart_weight_dates, height: "200px" %>
-        </div>
-        <div class="line-chart-tablet">
-        <%= line_chart @chart_weight_dates, height: "170px" %>
-        </div>
-        <div class="line-chart-phone">
-        <%= line_chart @chart_weight_dates, height: "20vh" %>
-        </div>
-      </div>
-      <div class="line-chart">
-        <h3>体脂肪率(%)</h3>
-        <div class="line-chart-pc">
-        <%= line_chart @chart_fat_dates, height: "200px" %>
-        </div>
-        <div class="line-chart-tablet">
-        <%= line_chart @chart_fat_dates, height: "170px" %>
-        </div>
-        <div class="line-chart-phone">
-        <%= line_chart @chart_fat_dates, height: "20vh" %>
-        </div>
-      </div>
-    </div>
